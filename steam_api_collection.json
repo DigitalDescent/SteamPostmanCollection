@@ -1,7 +1,7 @@
 {
     "info": {
         "_postman_id": "4575b7d8-237c-458d-8972-b5fa0c556369",
-        "name": "Steam Web API 03.20.2025",
+        "name": "Steam Web API 03.21.2025",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         "description": "Generated from https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1\n\nGo ahead and set `key` in your environment variables. You can get a key from: https://steamcommunity.com/dev/apikey"
     },
@@ -7148,6 +7148,43 @@
                             }
                         ],
                         "description": "Gets a list of apps available on the Steam Store.\n{\"if_modified_since\": \"\", \"have_description_language\": \"\", \"include_games\": \"\", \"include_dlc\": \"\", \"include_software\": \"\", \"include_videos\": \"\", \"include_hardware\": \"\", \"last_appid\": \"\", \"max_results\": \"\"}"
+                    }
+                },
+                {
+                    "name": "GetRecommendedTagsForUser",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "protocol": "https",
+                            "host": [
+                                "api",
+                                "steampowered",
+                                "com"
+                            ],
+                            "path": [
+                                "IStoreService",
+                                "GetRecommendedTagsForUser",
+                                "v1",
+                                ""
+                            ],
+                            "query": [
+                                {
+                                    "key": "input_json",
+                                    "value": "{\"steamid\": \"\", \"language\": \"\", \"country_code\": \"\", \"favor_rarer_tags\": \"\"}"
+                                }
+                            ]
+                        },
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                            },
+                            {
+                                "key": "x-webapi-key",
+                                "value": "{{key}}"
+                            }
+                        ],
+                        "description": "Get a set of tags that are recommended for the user based on recent playtime.\n{\"steamid\": \"\", \"language\": \"\", \"country_code\": \"\", \"favor_rarer_tags\": \"\"}"
                     }
                 }
             ]
